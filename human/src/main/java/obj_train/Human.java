@@ -1,6 +1,8 @@
 package obj_train;
 
 import java.time.LocalDate;
+
+import lombok.ToString;
 import obj_train.BirthDate;
 
 
@@ -9,20 +11,23 @@ import obj_train.BirthDate;
 public class Human extends AllHumans {
     
     Human(String fname, String lname, String id, LocalDate bDate) {
-        super(fname, lname, id, bDate);
+        super(fname, lname, id, bDate );
         
     }
 
     public static void main( String[] args ) {
-        LocalDate bDate = BirthDate.birthDate(1900, 2, 12);
+     
         
-        Human tom = new Human("Tom", "Hanks", "21231",bDate);
-        System.out.println(tom);
-        Human jake = new Human("Jake", "Boxes","048219",BirthDate.birthDate(2000, 2,12));
+        Human jake = new Human("Jake", "Hanks","048219",BirthDate.birthDate(2000, 2,12) );
+        Human john = new Human("John", "Hanks", "041204", BirthDate.birthDate(2001, 7, 02));
         System.out.println(jake);
         System.out.println(getAge(jake.bDate));
-        System.out.println(getAge(tom.bDate));   
-         
+        
+        System.out.println(john.equals(jake));
+        System.out.println(jake.toString());
+        System.out.println(john.lname.equals(jake.lname));  
+        jake.sayHello();
+        jake.toString();
     }
 
     
@@ -32,6 +37,17 @@ public class Human extends AllHumans {
         int dayOfBirth =bDate.getYear() - today.getYear();
         return -dayOfBirth;
 
+    }
+    
+    void sayHello(){
+        System.out.println("Hello, "+ "my name is "+fname+", "+ "I'm "+Human.getAge(bDate)+" years old." );
+    }
+    public String toString(){
+        return "Name: "+getFname()+
+                "\nLast Name: "+getLname()+
+                "\nID: "+getId()+
+                "\nage"+Human.getAge(bDate);
+        
     }
     
 }

@@ -9,12 +9,14 @@ import lombok.Data;
 @Data
 @Builder
 
-public  class AllHumans {
+public class AllHumans {
     
     
     String fname;
-    String lname;
+     String lname;
     String id;
-    LocalDate bDate;
+     LocalDate bDate;
+  
+    
 
 }
