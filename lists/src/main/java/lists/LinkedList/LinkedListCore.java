@@ -18,10 +18,15 @@ public class LinkedListCore<T> implements LinkelList<T>{
         Node<T> previous;
         T element;
 
+        /*
+        Standart construcror 
+        */
         Node(){
             
         }
-
+        /*
+         Usefull constructor 
+         */
         Node(T element){
            this.element =element;
            this.next =null;
@@ -30,7 +35,9 @@ public class LinkedListCore<T> implements LinkelList<T>{
         }
     
     }
-
+    /*
+    Adding element to the end of list 
+    */
     @Override
     public void add(T element) {      
        if(this.first==null){
@@ -40,7 +47,9 @@ public class LinkedListCore<T> implements LinkelList<T>{
        }
     }
     
-
+    /*
+    Adding element in head of list 
+    */
     public void addFirst(T element){
        Node<T> temp = new Node<>(element);
        temp.next = first;
@@ -51,6 +60,9 @@ public class LinkedListCore<T> implements LinkelList<T>{
        size++;
     }
 
+    /*
+    Adding element to the end of list 
+    */
     public void addLast(T element){
         Node<T> temp = new Node<>(element);
         
@@ -71,7 +83,9 @@ public class LinkedListCore<T> implements LinkelList<T>{
     
 
     
-
+    /*
+    Change element by new 
+    */
     @Override
     public void changeElemByIndex(int index, T element) {
         if(size==0){
@@ -87,7 +101,9 @@ public class LinkedListCore<T> implements LinkelList<T>{
         }
 
     }
-
+    /*
+    Printing list 
+     */
     @Override
     public String toString(){
         String S="{ ";
@@ -104,11 +120,7 @@ public class LinkedListCore<T> implements LinkelList<T>{
     }
 
 
-    @Override
-    public Object[] getAll(LinkedListCore list) {
-        
-        return null;
-    }
+    
 
     @Override
     public T getElemByIndex(int index) {
@@ -130,7 +142,9 @@ public class LinkedListCore<T> implements LinkelList<T>{
            
     }
 
-
+    /*
+     * Removing element from list
+     */
     @Override
     public void deleteElementByIndex(int index) {
         
