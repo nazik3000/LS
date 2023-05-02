@@ -12,6 +12,14 @@ public class Main
 {
     public static void main( String[] args )
     {
+        SensorPhone sensorPhone = new SensorPhone();
+        sensorPhone.builder().brand("");
+        sensorPhone.toString();
+
+        ButtonPhone bp = new ButtonPhone();
+        bp.builder().brand("motorolla").model("C33");
+        bp.toString();
+      
     //    SensorPhone iphone = new SensorPhone("IPhone", "11");
     //    ButtonPhone motorolla = new ButtonPhone("Motorolla", "X9");
             NonCablePhone iPhone = NonCablePhone.builder()

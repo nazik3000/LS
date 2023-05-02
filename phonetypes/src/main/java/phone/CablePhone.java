@@ -4,26 +4,22 @@ public  class CablePhone implements PhonesAbilities {
 
     @Override
     public void makeCall() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'makeCall'");
+       System.out.println("making   call");
     }
 
     @Override
     public void deniCall() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deniCall'");
+        System.out.println("Deni call");
     }
 
     @Override
     public void answerMachine() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'answerMachine'");
+        System.out.println("buuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuup");
     }
 
     @Override
     public void acceptCall() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'acceptCall'");
+        System.out.println("Listen");
     }
     
 

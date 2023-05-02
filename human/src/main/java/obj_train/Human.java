@@ -20,11 +20,9 @@ public class Human extends AllHumans {
         
         Human jake = new Human("Jake", "Hanks","048219",BirthDate.birthDate(2000, 2,12) );
         Human john = new Human("John", "Hanks", "041204", BirthDate.birthDate(2001, 7, 02));
-        System.out.println(jake);
-        System.out.println(getAge(jake.bDate));
+        
         
         System.out.println(john.equals(jake));
-        System.out.println(jake.toString());
         System.out.println(john.lname.equals(jake.lname));  
         jake.sayHello();
         jake.toString();
@@ -42,11 +40,12 @@ public class Human extends AllHumans {
     void sayHello(){
         System.out.println("Hello, "+ "my name is "+fname+", "+ "I'm "+Human.getAge(bDate)+" years old." );
     }
+    @Override
     public String toString(){
         return "Name: "+getFname()+
                 "\nLast Name: "+getLname()+
                 "\nID: "+getId()+
-                "\nage"+Human.getAge(bDate);
+                "\nage: "+Human.getAge(bDate);
         
     }
     

@@ -1,7 +1,10 @@
 package phone;
 
-public class SensorPhone extends NonCablePhone{
+
+public class SensorPhone extends NonCablePhone {
     
+String chargingBlock;
+String headphones;
 
    
 
