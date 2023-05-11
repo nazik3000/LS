@@ -1,8 +1,11 @@
 package lists;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+
+import javax.management.relation.InvalidRelationIdException;
 
 import lists.LinkedList.LinkedListCore;
 import lists.LinkedList.LinkelList;
@@ -28,7 +31,8 @@ public class Realise
     ints.addFirst(9);
     ints.addFirst(23);
     ints.addLast(8);
-    
+        ints.iterator();
+        //Collections.sort(ints);
         System.out.println( ints.toString());
         System.out.println(ints.getElemByIndex(3));
        ints.deleteElementByIndex(3);
