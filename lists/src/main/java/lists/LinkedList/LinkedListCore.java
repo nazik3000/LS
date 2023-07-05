@@ -1,18 +1,14 @@
 package lists.LinkedList;
 
-import java.util.List;
-import java.util.Objects;
+import java.util.Comparator;
+import java.util.Iterator;
 
-import javax.lang.model.element.Element;
-import javax.xml.transform.Templates;
 
-public class LinkedListCore<T> implements LinkelList<T>{
+
+
+public class LinkedListCore<T>  implements LinkelList<T>{
 
    
-    private int size;
-    private Node<T> first;
-    private Node<T> last;
-
     public static class Node<T>{
         Node<T> next;
         Node<T> previous;
@@ -35,6 +31,37 @@ public class LinkedListCore<T> implements LinkelList<T>{
         }
     
     }
+    private final class IteratorList implements Iterator<T>{
+        private Node<T> current;
+        private int index;
+
+        public IteratorList(){
+            this.current = first;
+            index =0;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return current.next != null;
+            
+        }
+
+        @Override
+        public T next() {
+         if(index == 0 ){
+            current =first;
+            index++;
+         }
+         current = current.next;
+         index++;
+         return current.element;
+        }
+    }
+    private int size;
+
+    private Node<T> first;
+    private Node<T> last;
+    
     /*
     Adding element to the end of list 
     */
@@ -46,7 +73,7 @@ public class LinkedListCore<T> implements LinkelList<T>{
        addLast(element);
        }
     }
-    
+
     /*
     Adding element in head of list 
     */
@@ -60,6 +87,8 @@ public class LinkedListCore<T> implements LinkelList<T>{
        size++;
     }
 
+    
+    
     /*
     Adding element to the end of list 
     */
@@ -74,15 +103,12 @@ public class LinkedListCore<T> implements LinkelList<T>{
         }
         size++;
     }
-
     
+
     
     public int getSize(){
         return size;
     }
-    
-
-    
     /*
     Change element by new 
     */
@@ -118,9 +144,6 @@ public class LinkedListCore<T> implements LinkelList<T>{
         S+= String.valueOf(x.element);
         return S+" }";
     }
-
-
-    
 
     @Override
     public T getElemByIndex(int index) {
@@ -166,5 +189,27 @@ public class LinkedListCore<T> implements LinkelList<T>{
 
         
     }
+    @Override
+    public Iterator<T> iterator() {
+       return new IteratorList();
+    }
+
+    @Override
+    public int compareTo(T o ) {
+        return 0;
+    }
     
-}
+    public final class CompareList implements Comparator<T>{
+
+        @Override
+        public int compare(T o1, T o2) {
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'compare'");
+        }}
+
+    }
+    
+
+    
+
+
